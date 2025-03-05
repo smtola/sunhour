@@ -5,7 +5,7 @@
                 <a href="{{ route('home') }}" class="group">
                     <span 
                     class="relative
-                    text-white text-[18px] before:content-[''] before:absolute before:left-[100%] before:bottom-2 before:w-0 before:h-[2px] before:bg-white before:transition-all before:duration-300 before:ease-in-out
+                    text-white text-[18px] before:content-[''] before:absolute before:left-[100%] before:bottom-[1%] before:w-0 before:h-[2px] before:bg-white before:transition-all before:duration-300 before:ease-in-out
                     group-hover:before:w-[200%] hover:before:opacity-100
                     {{ Route::is('home') ? 'before:w-[200%] before:opacity-100' : '' }}
                     ">Home</span>
