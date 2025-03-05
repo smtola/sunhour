@@ -1,0 +1,17 @@
+name: SunHour
+php: '8.4'
+secured: true
+aliases: 
+    - herd-laravel
+services:
+    mongodb:
+        version: 7.0.12
+        port: '${DB_PORT}'
+    postgresql:
+        version: '17'
+        port: '${DB_PORT}'
+    mysql:
+        version: 8.0.36
+        port: '${DB_PORT}'
+integrations:
+    forge: {  }
