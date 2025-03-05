@@ -18,7 +18,25 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="bg-white text-gray-900 overflow-hidden">
+<body onload="hideLoadingScreen()" class="bg-white text-gray-900 overflow-hidden">
+    <div id="loading" class="!hidden bg-black flex flex-col justify-center items-center fixed inset-0 w-full h-full z-[20000]">
+            <video class="w-[40vh] object-cover object-center" autoplay loop  playsinline muted>
+                <source src="{{asset('loading.mp4')}}" type="video/mp4">
+            </video>
+    </div>
     @yield('content')
+
+    <script>
+        const loading = document.getElementById('loading');
+
+        function hideLoadingScreen() {
+            loading.classList.add('!hidden');
+        }
+
+        // Show the loading screen immediately on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            loading.classList.remove('!hidden');
+        });
+    </script>
 </body>
 </html>
