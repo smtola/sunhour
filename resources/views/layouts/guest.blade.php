@@ -19,10 +19,10 @@
 </head>
 
 <body onload="hideLoadingScreen()" class="bg-white text-gray-900 overflow-hidden">
-    <div id="loading" class="!hidden bg-black flex flex-col justify-center items-center fixed inset-0 w-full h-full z-[20000]">
-            <video class="w-[40vh] object-cover object-center" autoplay loop  playsinline muted>
+    <div id="loading" class="!hidden opacity-0 bg-black flex flex-col justify-center items-center fixed inset-0 w-full h-full z-[20000]">
+        <video class="w-[40vh] object-cover object-center" autoplay loop  playsinline muted>
                 <source src="{{asset('loading.mp4')}}" type="video/mp4">
-            </video>
+        </video>
     </div>
     @yield('content')
 
@@ -31,11 +31,13 @@
 
         function hideLoadingScreen() {
             loading.classList.add('!hidden');
+            loading.classList.add('opacity-0');
         }
 
         // Show the loading screen immediately on page load
         window.addEventListener('DOMContentLoaded', () => {
             loading.classList.remove('!hidden');
+            loading.classList.remove('opacity-0');
         });
     </script>
 </body>
