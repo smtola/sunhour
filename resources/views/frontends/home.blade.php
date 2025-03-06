@@ -15,14 +15,14 @@
             @endcomponent
 
             {{-- content --}}
-            <div class="relative z-10 w-full max-w-[125vh] 2xl:max-w-[135vh] ms-auto px-3 md:px-10">
+            <div class="relative z-10 w-full max-w-[125vh] max-w-15inch 2xl:max-w-[135vh] ms-auto px-3 md:px-10">
                 {{-- Header --}}
                 @component('components.header-dark')
                 @endcomponent
 
-                <div class="bg-black/70 p-3 md:p-[3em] rounded-sm w-full max-w-[84vh] xl:me-auto mt-[12rem]  md:mt-[22rem] lg:mt-[30rem] xl:mt-[14rem] font-['Inter']">
+                <div class="bg-black/70 p-3 md:p-[3em] rounded-sm w-full max-w-[84vh] xl:me-auto mt-[12rem]  md:mt-[22rem] lg:mt-[30rem] xl:mt-[14rem] font-['Inter'] mt-15inch">
                     <p class="text-white text-[24px] font-light">Welcome to</p>
-                    <h1 class="text-[32px] md:text-[42px] lg:text-[82px] xl:text-[42px] 2xl:text-[82px] font-bold text-white ">
+                    <h1 class="text-[32px] md:text-[42px] lg:text-[82px] xl:text-[42px] 2xl:text-[62px] font-bold text-white ">
                         SUNHOUR <span class="font-light">GROUP</span>
                     </h1>
                     <p class="text-white text-[16px] md:text-[20px] xl:text-[18px] font-light text-pretty">
@@ -39,4 +39,14 @@
             </footer>
         </div>
     </div>
+    <style>
+        @media only screen and (max-width: 1440px) and (min-width: 1440px) {
+            .mt-15inch {
+                margin-top: 8rem;
+            }
+            .max-w-15inch{
+                max-width: 156vh;
+            }
+        }
+    </style>
 @endsection
