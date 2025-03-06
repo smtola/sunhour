@@ -10,11 +10,11 @@
             @component('components.navbar')
             @endcomponent
             {{-- content --}}
-            <div class="relative z-10 w-full 2xl:max-w-[146vh] ms-auto px-10 font-['Inter'] transition-all duration-300">
+            <div class="relative z-10 w-full max-w-[130vh] 2xl:max-w-[146vh] ms-auto px-3 md:px-10 font-['Inter'] transition-all duration-300">
                 @component('components.header-dark')
                 @endcomponent
                 <div class="w-full max-w-[114vh] me-auto">
-                    <div class="z-10 mt-4 mb-[5rem]">
+                    <div class="z-10 mt-2 md:mt-[8rem] mb-[8rem] md:mb-[5rem] lg:mb-[8rem] xl:mt-4 xl:mb-[5rem]">
                         <nav aria-label="Breadcrumb">
                             <ol class="flex items-center gap-1 text-sm ">
                                 <li>
@@ -74,18 +74,18 @@
                         </nav>
                     </div>
                     <div class="overflow-hidden relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[12vh] after:bg-gradient-to-b after:from-white/0 after:to-[#5f737f]/70 after:bg-opacity-100 after:backdrop-blur-[2px] after:z-10">
-                        <div class="h-[54.6vh] overflow-y-auto scroll-smooth">
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-7 rounded-sm">
+                        <div class="h-[54vh] lg:h-[58vh] w-full overflow-y-auto overflow-x-hidden scroll-smooth pb-[7rem] xl:pb-[6rem] 2xl:pb-[8rem]">
+                            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4 md:gap-7 rounded-sm">
                                 <a href="{{ route('brands-client.model-details', [$brand, $product, $model]) }}"
-                                    class="w-[350px] h-[115px] hover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
-                                    <article class="bg-white grid grid-cols-3 w-full h-[14vh]">
+                                    class="w-fullhover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
+                                    <article class="bg-white grid grid-cols-1 md:grid-cols-3 w-full">
                                         <img src="https://www.toto.com/en/washlet/benefit/images/design_01_pc.jpg"
-                                            alt="" class="col-span-1 w-full h-fit object-fit object-center">
+                                            alt="" class="col-span-1 w-full h-fit object-contain object-center">
                                         <div class="relative col-span-2 p-2">
-                                            <h1 class="text-xl font-medium mb-7">
+                                            <h1 class="text-[14px] md:text-xl font-medium mb-3 2xl:mb-7">
                                                 CS902VT
                                             </h1>
-                                            <div class="text-[14px] font-light mb-1">
+                                            <div class="text-[11px] md:text-[14px] font-light mb-1">
                                                 <p>NEWNEOREST NX</p>
                                                 <p>Luxurious Smart Toilet</p>
                                             </div>
@@ -97,17 +97,16 @@
                                         </div>
                                     </article>
                                 </a>
-                   
-                                                                <a href=""
-                                    class="w-[350px] h-[120px] hover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
-                                    <article class="bg-white grid grid-cols-3 w-full h-[14vh]">
+                                <a href="{{ route('brands-client.model-details', [$brand, $product, $model]) }}"
+                                    class="w-fullhover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
+                                    <article class="bg-white grid grid-cols-1 md:grid-cols-3 w-full">
                                         <img src="https://www.toto.com/en/washlet/benefit/images/design_01_pc.jpg"
-                                            alt="" class="col-span-1 w-full h-fit object-fit object-center">
+                                            alt="" class="col-span-1 w-full h-full object-fit object-center">
                                         <div class="relative col-span-2 p-2">
-                                            <h1 class="text-xl font-medium mb-7">
+                                            <h1 class="text-[14px] md:text-xl font-medium mb-3 2xl:mb-7">
                                                 CS902VT
                                             </h1>
-                                            <div class="text-[14px] font-light mb-1">
+                                            <div class="text-[11px] md:text-[14px] font-light mb-1">
                                                 <p>NEWNEOREST NX</p>
                                                 <p>Luxurious Smart Toilet</p>
                                             </div>
@@ -119,16 +118,16 @@
                                         </div>
                                     </article>
                                 </a>
-                                                                <a href=""
-                                    class="w-[350px] h-[115px] hover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
-                                    <article class="bg-white grid grid-cols-3 w-full h-[14vh]">
+                                <a href="{{ route('brands-client.model-details', [$brand, $product, $model]) }}"
+                                    class="w-fullhover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
+                                    <article class="bg-white grid grid-cols-1 md:grid-cols-3 w-full">
                                         <img src="https://www.toto.com/en/washlet/benefit/images/design_01_pc.jpg"
-                                            alt="" class="col-span-1 w-full h-fit object-fit object-center">
+                                            alt="" class="col-span-1 w-full h-full object-fit object-center">
                                         <div class="relative col-span-2 p-2">
-                                            <h1 class="text-xl font-medium mb-7">
+                                           <h1 class="text-[14px] md:text-xl font-medium mb-3 2xl:mb-7">
                                                 CS902VT
                                             </h1>
-                                            <div class="text-[14px] font-light mb-1">
+                                            <div class="text-[11px] md:text-[14px] font-light mb-1">
                                                 <p>NEWNEOREST NX</p>
                                                 <p>Luxurious Smart Toilet</p>
                                             </div>
@@ -140,16 +139,16 @@
                                         </div>
                                     </article>
                                 </a>
-                                                                <a href=""
-                                    class="w-[350px] h-[115px] hover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
-                                    <article class="bg-white grid grid-cols-3 w-full h-[14vh]">
+                                <a href="{{ route('brands-client.model-details', [$brand, $product, $model]) }}"
+                                    class="w-fullhover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
+                                    <article class="bg-white grid grid-cols-1 md:grid-cols-3 w-full">
                                         <img src="https://www.toto.com/en/washlet/benefit/images/design_01_pc.jpg"
-                                            alt="" class="col-span-1 w-full h-fit object-fit object-center">
+                                            alt="" class="col-span-1 w-full h-full object-fit object-center">
                                         <div class="relative col-span-2 p-2">
-                                            <h1 class="text-xl font-medium mb-7">
+                                            <h1 class="text-[14px] md:text-xl font-medium mb-3 2xl:mb-7">
                                                 CS902VT
                                             </h1>
-                                            <div class="text-[14px] font-light mb-1">
+                                            <div class="text-[11px] md:text-[14px] font-light mb-1">
                                                 <p>NEWNEOREST NX</p>
                                                 <p>Luxurious Smart Toilet</p>
                                             </div>
@@ -161,16 +160,16 @@
                                         </div>
                                     </article>
                                 </a>
-                                                                <a href=""
-                                    class="w-[350px] h-[115px] hover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
-                                    <article class="bg-white grid grid-cols-3 w-full h-[14vh]">
+                                <a href="{{ route('brands-client.model-details', [$brand, $product, $model]) }}"
+                                    class="w-fullhover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
+                                    <article class="bg-white grid grid-cols-1 md:grid-cols-3 w-full">
                                         <img src="https://www.toto.com/en/washlet/benefit/images/design_01_pc.jpg"
-                                            alt="" class="col-span-1 w-full h-fit object-fit object-center">
+                                            alt="" class="col-span-1 w-full h-full object-fit object-center">
                                         <div class="relative col-span-2 p-2">
-                                            <h1 class="text-xl font-medium mb-7">
+                                            <h1 class="text-[14px] md:text-xl font-medium mb-3 2xl:mb-7">
                                                 CS902VT
                                             </h1>
-                                            <div class="text-[14px] font-light mb-1">
+                                            <div class="text-[11px] md:text-[14px] font-light mb-1">
                                                 <p>NEWNEOREST NX</p>
                                                 <p>Luxurious Smart Toilet</p>
                                             </div>
@@ -182,16 +181,16 @@
                                         </div>
                                     </article>
                                 </a>
-                                                                <a href=""
-                                    class="w-[350px] h-[115px] hover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
-                                    <article class="bg-white grid grid-cols-3 w-full h-[14vh]">
+                                <a href="{{ route('brands-client.model-details', [$brand, $product, $model]) }}"
+                                    class="w-fullhover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
+                                    <article class="bg-white grid grid-cols-1 md:grid-cols-3 w-full">
                                         <img src="https://www.toto.com/en/washlet/benefit/images/design_01_pc.jpg"
-                                            alt="" class="col-span-1 w-full h-fit object-fit object-center">
+                                            alt="" class="col-span-1 w-full h-full object-fit object-center">
                                         <div class="relative col-span-2 p-2">
-                                            <h1 class="text-xl font-medium mb-7">
+                                            <h1 class="text-[14px] md:text-xl font-medium mb-3 2xl:mb-7">
                                                 CS902VT
                                             </h1>
-                                            <div class="text-[14px] font-light mb-1">
+                                            <div class="text-[11px] md:text-[14px] font-light mb-1">
                                                 <p>NEWNEOREST NX</p>
                                                 <p>Luxurious Smart Toilet</p>
                                             </div>
@@ -203,16 +202,16 @@
                                         </div>
                                     </article>
                                 </a>
-                                                                <a href=""
-                                    class="w-[350px] h-[115px] hover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
-                                    <article class="bg-white grid grid-cols-3 w-full h-[14vh]">
+                                <a href="{{ route('brands-client.model-details', [$brand, $product, $model]) }}"
+                                    class="w-fullhover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
+                                    <article class="bg-white grid grid-cols-1 md:grid-cols-3 w-full">
                                         <img src="https://www.toto.com/en/washlet/benefit/images/design_01_pc.jpg"
-                                            alt="" class="col-span-1 w-full h-fit object-fit object-center">
+                                            alt="" class="col-span-1 w-full h-full object-fit object-center">
                                         <div class="relative col-span-2 p-2">
-                                            <h1 class="text-xl font-medium mb-7">
+                                            <h1 class="text-[14px] md:text-xl font-medium mb-3 2xl:mb-7">
                                                 CS902VT
                                             </h1>
-                                            <div class="text-[14px] font-light mb-1">
+                                            <div class="text-[11px] md:text-[14px] font-light mb-1">
                                                 <p>NEWNEOREST NX</p>
                                                 <p>Luxurious Smart Toilet</p>
                                             </div>
@@ -224,16 +223,16 @@
                                         </div>
                                     </article>
                                 </a>
-                                                                <a href=""
-                                    class="w-[350px] h-[115px] hover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
-                                    <article class="bg-white grid grid-cols-3 w-full h-[14vh]">
+                                <a href="{{ route('brands-client.model-details', [$brand, $product, $model]) }}"
+                                    class="w-fullhover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
+                                    <article class="bg-white grid grid-cols-1 md:grid-cols-3 w-full">
                                         <img src="https://www.toto.com/en/washlet/benefit/images/design_01_pc.jpg"
-                                            alt="" class="col-span-1 w-full h-fit object-fit object-center">
+                                            alt="" class="col-span-1 w-full h-full object-fit object-center">
                                         <div class="relative col-span-2 p-2">
-                                            <h1 class="text-xl font-medium mb-7">
+                                            <h1 class="text-[14px] md:text-xl font-medium mb-3 2xl:mb-7">
                                                 CS902VT
                                             </h1>
-                                            <div class="text-[14px] font-light mb-1">
+                                            <div class="text-[11px] md:text-[14px] font-light mb-1">
                                                 <p>NEWNEOREST NX</p>
                                                 <p>Luxurious Smart Toilet</p>
                                             </div>
@@ -245,16 +244,16 @@
                                         </div>
                                     </article>
                                 </a>
-                                                                <a href=""
-                                    class="w-[350px] h-[115px] hover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
-                                    <article class="bg-white grid grid-cols-3 w-full h-[14vh]">
+                                <a href="{{ route('brands-client.model-details', [$brand, $product, $model]) }}"
+                                    class="w-fullhover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
+                                    <article class="bg-white grid grid-cols-1 md:grid-cols-3 w-full">
                                         <img src="https://www.toto.com/en/washlet/benefit/images/design_01_pc.jpg"
-                                            alt="" class="col-span-1 w-full h-fit object-fit object-center">
+                                            alt="" class="col-span-1 w-full h-full object-fit object-center">
                                         <div class="relative col-span-2 p-2">
-                                            <h1 class="text-xl font-medium mb-7">
+                                           <h1 class="text-[14px] md:text-xl font-medium mb-3 2xl:mb-7">
                                                 CS902VT
                                             </h1>
-                                            <div class="text-[14px] font-light mb-1">
+                                            <div class="text-[11px] md:text-[14px] font-light mb-1">
                                                 <p>NEWNEOREST NX</p>
                                                 <p>Luxurious Smart Toilet</p>
                                             </div>
@@ -266,16 +265,16 @@
                                         </div>
                                     </article>
                                 </a>
-                                                                <a href=""
-                                    class="w-[350px] h-[115px] hover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
-                                    <article class="bg-white grid grid-cols-3 w-full h-[14vh]">
+                                <a href="{{ route('brands-client.model-details', [$brand, $product, $model]) }}"
+                                    class="w-fullhover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
+                                    <article class="bg-white grid grid-cols-1 md:grid-cols-3 w-full">
                                         <img src="https://www.toto.com/en/washlet/benefit/images/design_01_pc.jpg"
-                                            alt="" class="col-span-1 w-full h-fit object-fit object-center">
+                                            alt="" class="col-span-1 w-full h-full object-fit object-center">
                                         <div class="relative col-span-2 p-2">
-                                            <h1 class="text-xl font-medium mb-7">
+                                            <h1 class="text-[14px] md:text-xl font-medium mb-3 2xl:mb-7">
                                                 CS902VT
                                             </h1>
-                                            <div class="text-[14px] font-light mb-1">
+                                            <div class="text-[11px] md:text-[14px] font-light mb-1">
                                                 <p>NEWNEOREST NX</p>
                                                 <p>Luxurious Smart Toilet</p>
                                             </div>
@@ -287,16 +286,16 @@
                                         </div>
                                     </article>
                                 </a>
-                                                                <a href=""
-                                    class="w-[350px] h-[115px] hover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
-                                    <article class="bg-white grid grid-cols-3 w-full h-[14vh]">
+                                <a href="{{ route('brands-client.model-details', [$brand, $product, $model]) }}"
+                                    class="w-fullhover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
+                                    <article class="bg-white grid grid-cols-1 md:grid-cols-3 w-full">
                                         <img src="https://www.toto.com/en/washlet/benefit/images/design_01_pc.jpg"
-                                            alt="" class="col-span-1 w-full h-fit object-fit object-center">
+                                            alt="" class="col-span-1 w-full h-full object-fit object-center">
                                         <div class="relative col-span-2 p-2">
-                                            <h1 class="text-xl font-medium mb-7">
+                                        <h1 class="text-[14px] md:text-xl font-medium mb-3 2xl:mb-7">
                                                 CS902VT
                                             </h1>
-                                            <div class="text-[14px] font-light mb-1">
+                                            <div class="text-[11px] md:text-[14px] font-light mb-1">
                                                 <p>NEWNEOREST NX</p>
                                                 <p>Luxurious Smart Toilet</p>
                                             </div>
@@ -308,37 +307,16 @@
                                         </div>
                                     </article>
                                 </a>
-                                                                <a href=""
-                                    class="w-[350px] h-[115px] hover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
-                                    <article class="bg-white grid grid-cols-3 w-full h-[14vh]">
+                                <a href="{{ route('brands-client.model-details', [$brand, $product, $model]) }}"
+                                    class="w-fullhover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
+                                    <article class="bg-white grid grid-cols-1 md:grid-cols-3 w-full">
                                         <img src="https://www.toto.com/en/washlet/benefit/images/design_01_pc.jpg"
-                                            alt="" class="col-span-1 w-full h-fit object-fit object-center">
+                                            alt="" class="col-span-1 w-full h-full object-fit object-center">
                                         <div class="relative col-span-2 p-2">
-                                            <h1 class="text-xl font-medium mb-7">
+                                            <h1 class="text-[14px] md:text-xl font-medium mb-3 2xl:mb-7">
                                                 CS902VT
                                             </h1>
-                                            <div class="text-[14px] font-light mb-1">
-                                                <p>NEWNEOREST NX</p>
-                                                <p>Luxurious Smart Toilet</p>
-                                            </div>
-                                            <div class="absolute top-[-4%] right-3">
-                                                <span class="bg-red-600 text-white px-2 py-[2px] text-[12px]">
-                                                    New
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </a>
-                                                                <a href=""
-                                    class="w-[350px] h-[115px] hover:shadow-sm hover:scale-[1.01] transition-all duration-150 overflow-hidden">
-                                    <article class="bg-white grid grid-cols-3 w-full h-[14vh]">
-                                        <img src="https://www.toto.com/en/washlet/benefit/images/design_01_pc.jpg"
-                                            alt="" class="col-span-1 w-full h-fit object-fit object-center">
-                                        <div class="relative col-span-2 p-2">
-                                            <h1 class="text-xl font-medium mb-7">
-                                                CS902VT
-                                            </h1>
-                                            <div class="text-[14px] font-light mb-1">
+                                            <div class="text-[11px] md:text-[14px] font-light mb-1">
                                                 <p>NEWNEOREST NX</p>
                                                 <p>Luxurious Smart Toilet</p>
                                             </div>

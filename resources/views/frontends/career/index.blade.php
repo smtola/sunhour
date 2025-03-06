@@ -10,12 +10,12 @@
             @component('components.navbar')
             @endcomponent
             {{-- content --}}
-            <div class="relative z-10 w-full 2xl:max-w-[150vh] ms-auto px-10 font-['Inter'] transition-all duration-300">
+            <div class="relative z-10 w-full max-w-[120vh] 2xl:max-w-[150vh] ms-auto px-3 md:px-10 font-['Inter'] transition-all duration-300">
                 @component('components.header-light')
                 @endcomponent
-                <div class="bg-gradient-to-r from-white/80 to-white/10 w-[90vh] me-auto mt-[10rem] px-10 pb-10 pt-3">
-                    <h1 class="text-[60px] font-bold">Careers</h1>
-                    <p class="text-[20px] whitespace-pre-line">
+                <div class="bg-gradient-to-r from-white/80 to-white/10 w-full xl:w-[90vh] mt-[8rem] md:mt-[18rem] lg:mt-[24rem] xl:mt-[7rem] me-auto 2xl:mt-[10rem] px-3 md:px-10 pb-10 pt-3">
+                    <h1 class="text-[32px] md:text-[40px] 2xl:text-[60px] font-bold">Careers</h1>
+                    <p class="text-[14px] md:text-[16px] 2xl:text-[20px] whitespace-pre-line">
                         We are always looking for talented people to join our team. We encourage you to submit an application any time, even if there are no current openings listed.
 
                         If we think you’re right for us, we’ll find you a place in our organisation.

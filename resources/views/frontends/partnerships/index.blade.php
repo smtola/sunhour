@@ -8,13 +8,13 @@
             @component('components.navbar')
             @endcomponent
             {{-- content --}}
-            <div class="relative z-10 w-full 2xl:max-w-[150vh] ms-auto px-10 font-['Inter'] transition-all duration-300">
+            <div class="relative z-10 w-full max-w-[130vh] 2xl:max-w-[150vh] ms-auto px-3 md:px-10 font-['Inter'] transition-all duration-300">
                 @component('components.header-light')
                 @endcomponent
-                <div class="w-full me-auto mt-[10rem]">
+                <div class="h-[90vh] max-sm:overflow-y-auto max-sm:pb-[6rem] w-full me-auto md:mt-[14rem] lg:mt-[20rem] xl:mt-[5rem] 2xl:mt-[10rem]">
                     <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-7 rounded-sm">
                         <div class="w-full h-full">
-                            <h1 class="text-[60px] font-bold whitespace-pre-line leading-[60px]">
+                            <h1 class="text-[32px] md:text-[60px] font-bold whitespace-pre-line leading-[32px] md:leading-[60px]">
                                 Want to Become
                                 Our Partner?
                             </h1>
@@ -26,9 +26,9 @@
                                 Please tell us a little bit about your business below. We’ll securely store your information and get in touch as soon as possible.
                             </p>
                         </div>
-                        <div class="w-full max-w-[400px] bg-black h-full p-10">
+                        <div class="w-full max-w-[400px] bg-black h-full p-3 xl:p-10">
                             <form action="">
-                                <div class="flex flex-col gap-5">
+                                <div class="flex flex-col gap-2 md:gap-5">
                                     <input type="text" name="cname" id="cname" class="w-full text-white bg-[#444444] text-[14px] p-2"
                                     placeholder="Enter Company Name"
                                     >
@@ -63,7 +63,7 @@
                 </div>
                 
             </div>
-            <footer class="absolute inset-x-0 bottom-0 bg-black py-1">
+            <footer class="absolute inset-x-0 bottom-0 bg-black py-1 z-[50]">
                 <p class="text-white text-[12px] text-center"> © Copyright 2024 SUNHOUR GROUP, All Rights Reserved</p>
             </footer>
         </div>

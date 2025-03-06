@@ -10,11 +10,11 @@
                 @component('components.navbar')
                 @endcomponent
             {{-- content --}}
-            <div class="relative z-10 w-full max-w-[140vh] ms-auto px-10 font-['Inter'] transition-all duration-300">
+            <div class="relative z-10 w-full max-w-[120vh] 2xl:max-w-[140vh] ms-auto px-3 md:px-10 font-['Inter'] transition-all duration-300">
                 @component('components.header-dark')
                 @endcomponent
                 <div class="w-full max-w-[100vh] me-auto">
-                    <div class="z-10 mt-4 mb-[6rem]">
+                    <div class="z-10 mt-4 md:mt-[8rem] xl:mt-4 xl:mb-[3rem] 2xl:mb-[6rem]">
                         <nav aria-label="Breadcrumb">
                         <ol class="flex items-center gap-1 text-sm ">
                             <li>
@@ -77,10 +77,10 @@
                         </ol>
                         </nav>
                     </div>
-                    <h1 class="text-[64px] font-bold text-white font-[Ponomar] mb-[1em]">
+                    <h1 class="text-center md:text-start text-[64px] font-bold text-white font-[Ponomar] mb-[10px] 2xl:mb-[1em]">
                         {{$brand}}
                     </h1>
-                    <div class="h-[31vh] bg-black/70 overflow-y-scroll scroll-smooth rounded-sm">
+                    <div class="h-[50vh] md:h-[38vh] 2xl:h-[31vh] bg-black/70 overflow-y-scroll scroll-smooth rounded-sm">
                         <ul class="p-10 space-y-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center">
                             <li>
                                 <a href="{{ route('brands-client.model', [$brand, 'Toilet']) }}" class="flex items-center w-full group">

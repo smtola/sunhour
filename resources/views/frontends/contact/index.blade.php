@@ -8,13 +8,13 @@
             @component('components.navbar')
             @endcomponent
             {{-- content --}}
-            <div class="relative z-10 w-full 2xl:max-w-[150vh] ms-auto px-10 font-['Inter'] transition-all duration-300">
+            <div class="relative z-10 w-full max-w-[130vh] 2xl:max-w-[150vh] ms-auto px-3 lg:px-10 font-['Inter'] transition-all duration-300">
                 @component('components.header-light')
                 @endcomponent
-                <div class="w-full me-auto mt-[5rem]">
+                <div class="h-[90vh] max-sm:overflow-y-auto max-sm:pb-[6rem] w-full me-auto mt-[2rem] md:mt-[8rem] xl:mt-[2rem] 2xl:mt-[5rem]">
                     <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-7 rounded-sm">
-                        <div class="w-[450px] h-full">
-                            <h1 class="text-[60px] font-bold whitespace-pre-line leading-[60px]">
+                        <div class="w-full lg:w-[450px] h-full">
+                            <h1 class="text-[32px] md:text-[32px] md:text-[60px] font-bold whiteleading-[32px] md:space-pre-line leading-[32px] md:leading-[60px]">
                                 Contact Us
                             </h1>
                             <p class="text-gray-700 text-sm mt-2 whitespace-pre-line">
@@ -59,7 +59,7 @@
                         </div>
                         <div class="w-full max-w-[400px]">
                             <div>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1504.8398422006314!2d104.91904409277545!3d11.561474051377417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109513e968a1bb9%3A0x90fd8a12a4c83adb!2zU1VOSE9VUiBHUk9VUCBDTy4sIExURCDpobrlkozpm4blm6LmnInpmZDlhazlj7g!5e1!3m2!1sen!2skh!4v1741156787319!5m2!1sen!2skh" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <iframe class="w-full h-full lg:w-[460px] lg:h-[270px] 2xl:w-[600px] 2xl:h-[350px]" width="600" height="350" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1504.8398422006314!2d104.91904409277545!3d11.561474051377417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109513e968a1bb9%3A0x90fd8a12a4c83adb!2zU1VOSE9VUiBHUk9VUCBDTy4sIExURCDpobrlkozpm4blm6LmnInpmZDlhazlj7g!5e1!3m2!1sen!2skh!4v1741156787319!5m2!1sen!2skh"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                             <h1 class="text-[20px] font-bold whitespace-pre-line leading-[20px]">
                                 Get in touch with us!
@@ -84,7 +84,7 @@
                     </div>
                 </div>
             </div>
-            <footer class="absolute inset-x-0 bottom-0 bg-black py-1">
+            <footer class="absolute inset-x-0 bottom-0 bg-black py-1 z-[50]">
                 <p class="text-white text-[12px] text-center"> © Copyright 2024 SUNHOUR GROUP, All Rights Reserved</p>
             </footer>
         </div>

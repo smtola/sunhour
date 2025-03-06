@@ -7,7 +7,7 @@
             autoplay muted loop
             class="absolute top-0 left-0 w-full h-full object-cover"
             >
-                <source src="https://videos.pexels.com/video-files/3648257/3648257-uhd_2560_1440_30fps.mp4" type="video/mp4">
+                <source src="{{asset('background.mp4')}}" type="video/mp4">
             </video>
             <div class="absolute inset-0 bg-black opacity-50"></div>
             {{-- Navbar --}}
@@ -15,17 +15,17 @@
             @endcomponent
 
             {{-- content --}}
-            <div class="relative z-10 w-full max-w-[135vh] ms-auto px-10">
+            <div class="relative z-10 w-full max-w-[125vh] 2xl:max-w-[135vh] ms-auto px-3 md:px-10">
                 {{-- Header --}}
                 @component('components.header-dark')
                 @endcomponent
 
-                <div class="bg-black/70 p-[3em] rounded-sm w-full max-w-[84vh] me-auto mt-[14rem] font-['Inter']">
+                <div class="bg-black/70 p-3 md:p-[3em] rounded-sm w-full max-w-[84vh] xl:me-auto mt-[12rem]  md:mt-[22rem] lg:mt-[30rem] xl:mt-[14rem] font-['Inter']">
                     <p class="text-white text-[24px] font-light">Welcome to</p>
-                    <h1 class="text-[82px] font-bold text-white ">
+                    <h1 class="text-[32px] md:text-[42px] lg:text-[82px] xl:text-[42px] 2xl:text-[82px] font-bold text-white ">
                         SUNHOUR <span class="font-light">GROUP</span>
                     </h1>
-                    <p class="text-white text-[18px] font-light text-pretty">
+                    <p class="text-white text-[16px] md:text-[20px] xl:text-[18px] font-light text-pretty">
                         Sun Hur Group is a leading impor ter and distributor of genuine quality
                         products that have been tested to prove their benefits, safety, beauty,
                         and comfort to consumers and customers.

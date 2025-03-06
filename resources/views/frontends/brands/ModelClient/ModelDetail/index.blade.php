@@ -2,17 +2,17 @@
 
 @section('content')
     <div class="m-0 p-0 overflow-hidden">
-        <div class="relative h-screen w-full">
-            <div class="absolute inset-0 bg-white"></div>
+        <div class="relative h-screen w-full overflow-hidden">
+            <div class="absolute inset-0 bg-white overflow-hidden"></div>
             {{-- Navbar --}}
             @component('components.navbar')
             @endcomponent
             {{-- content --}}
-            <div class="relative z-10 w-full 2xl:max-w-[150vh] ms-auto px-10 font-['Inter'] transition-all duration-300">
+            <div class="relative z-10 w-full max-w-[130vh] 2xl:max-w-[150vh] ms-auto px-3 lg:px-10 font-['Inter'] transition-all duration-300">
                 @component('components.header-light')
                 @endcomponent
-                <div class="w-full me-auto">
-                    <div class="z-10 mt-4 mb-[5rem]">
+                <div class="w-full h-screen md:h-[90vh] lg:h-full me-auto overflow-y-scroll overflow-x-hidden scroll-smooth max-sm:pb-[10rem] transition-all duration-300">
+                    <div class="z-10 mt-2 md:mt-[8rem] mb-[2rem] lg:mb-[8rem] xl:mt-4 xl:mb-[2rem] 2xl:mb-[5rem]">
                         <nav aria-label="Breadcrumb">
                             <ol class="flex items-center gap-1 text-sm ">
                                 <li>
@@ -74,8 +74,8 @@
                             </ol>
                         </nav>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-7 rounded-sm">
-                        <div class="w-full h-[70vh]">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-7 rounded-sm">
+                        <div class="w-full h-full 2xl:h-[70vh]">
                             <div>
                                 <h1 class="text-2xl font-bold">{{ $model }}</h1>
                                 <div class="inline-flex items-center">
@@ -84,11 +84,11 @@
                                 </div>
 
                                 <img src="https://s3-alpha-sig.figma.com/img/7bd2/f9b4/1ec5cd6b753c60b1abbd6edb1fb65323?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=dpAuvoCybiX7KVZwYsVR-AingZXyNdzafQqOmh3wDqJdGGJMgiPYeK~AY0bFUudQ4IsQwiekfSbbDQP~YrFihCYe~XkMknFM6G4Ct864rQ7H3f9K0TP8elYcE7DoKVr0BVw-GEtW9enr47E4VRe8J79SXQg1XjTOBwcCIuU8nXT23WFYb2C4liJwriad9uXCDYxCoDe3l3GQnW8U1RJZtJAmvJmcNhlN2RZpptzvd8vtwY2Ny5tN9AkkK79cSh9agd4thjm2kjPUbVh7s9zLip7f-uV32obKieQFh3iFnT3BtiQn4laQe5Wd-lwKRnU2CpVtaaD~2aS061z7DkUBtg__"
-                                    alt="" class="w-[60vh] object-contain object-center">
+                                    alt="" class="w-full md:w-[50vh] 2xl:w-[60vh] object-contain object-center">
                             </div>
                         </div>
-                        <div class="w-full h-[70vh]">
-                            <ul class="flex items-center gap-2">
+                        <div class="w-full h-full 2xl:h-[70vh]">
+                            <ul class="max-sm:h-[5vh] max-sm:overflow-x-scroll  px-2 md:px-0  flex justify-start items-center gap-2">
                                 <li>
                                     <a href="#features"
                                         class="tab-link text-[16px] font-medium font-['Inter'] px-4 py-1 text-gray-900 rounded-full hover:bg-gray-900 hover:text-white active transition-all duration-300">
@@ -118,7 +118,7 @@
                             <div class="content-tabs my-3">
                                 <!-- Features Tab -->
                                 <div id="features" class="tab-content active">
-                                    <ul class="list-disc ml-5 mt-2 text-gray-700 font-[300] font-['Inter']">
+                                    <ul class="text-[12px] 2xl:text-[16px] list-disc ml-5 mt-2 text-gray-700 font-[300] font-['Inter']">
                                         <li>Luxury, elegant and seamless design</li>
                                         <li>Revolutionary technology, ACTILIGHT, ridding both visible and invisible waste</li>
                                         <li>Hybrid Ecology System</li>
@@ -135,7 +135,7 @@
 
                                 <!-- Space Tab -->
                                 <div id="space" class="tab-content hidden">
-                                    <ul class="mt-2 text-gray-700 font-[300] font-['Inter']">
+                                    <ul class="mt-2 text-[12px] 2xl:text-[16px] text-gray-700 font-[300] font-['Inter']">
                                         <li class="flex items-start space-x-4">
                                             <strong class="w-[130px] font-[600]">
                                                 Flush system
@@ -196,9 +196,7 @@
                                             <strong class="w-[130px] font-[600]">
                                                 Material  
                                             </strong>
-                                            <p>
-                                                Bowl -Vitreous China                                   
-                                                Seat & Cover -Plastic                                   
+                                            <p class="whitespace-pre-line">Bowl -Vitreous China Seat & Cover -Plastic                                   
                                                 Remote Controller -Aluminium
                                             </p>
                                         </li>
@@ -216,7 +214,7 @@
                                 <!-- Video Tab -->
                                 <div id="video" class="tab-content hidden">
                                     <div class="mt-3">
-                                        <iframe width="360" height="215" src="https://www.youtube.com/embed/NmiP-3grdfE?si=Yx82cvETYyGxWp2C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                        <iframe class="lg:mx-auto w-full h-full md:w-[600px] md:h-[300px] lg:w-[200px] lg:h-[115px] 2xl:w-[360px] 2xl:h-[215px]" src="https://www.youtube.com/embed/NmiP-3grdfE?si=Yx82cvETYyGxWp2C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                     </div>
                                 </div>
 
@@ -227,7 +225,7 @@
                                             <a 
                                             class="flex items-center gap-5"
                                             href="" download="">
-                                                <img src="{{asset('images/pdf.png')}}" alt="pdf" class="w-7">
+                                                <img src="{{asset('images/pdf.png')}}" alt="pdf" class="w-5 2xl:w-7">
                                                 <span class="relative
                                                     before:content-['']
                                                     before:absolute
@@ -240,6 +238,7 @@
                                                     before:duration-300
                                                     before:ease-in-out
                                                     hover:before:w-full
+                                                    text-[12px] 2xl:text-[16px]
                                                 ">
                                                     2D Drawings
                                                 </span>
@@ -249,7 +248,7 @@
                                             <a 
                                             class="flex items-center gap-5"
                                             href="" download="">
-                                                <img src="{{asset('images/pdf.png')}}" alt="pdf" class="w-7">
+                                                <img src="{{asset('images/pdf.png')}}" alt="pdf" class="w-5 2xl:w-7">
                                                 <span class="relative
                                                     before:content-['']
                                                     before:absolute
@@ -262,6 +261,7 @@
                                                     before:duration-300
                                                     before:ease-in-out
                                                     hover:before:w-full
+                                                    text-[12px] 2xl:text-[16px]
                                                 ">
                                                    Image
                                                 </span>
@@ -271,7 +271,7 @@
                                             <a 
                                             class="flex items-center gap-5"
                                             href="" download="">
-                                                <img src="{{asset('images/pdf.png')}}" alt="pdf" class="w-7">
+                                                <img src="{{asset('images/pdf.png')}}" alt="pdf" class="w-5 2xl:w-7">
                                                 <span class="relative
                                                     before:content-['']
                                                     before:absolute
@@ -284,6 +284,7 @@
                                                     before:duration-300
                                                     before:ease-in-out
                                                     hover:before:w-full
+                                                    text-[12px] 2xl:text-[16px]
                                                 ">
                                                     Specification Sheet
                                                 </span>
@@ -293,7 +294,7 @@
                                             <a 
                                             class="flex items-center gap-5"
                                             href="" download="">
-                                                <img src="{{asset('images/pdf.png')}}" alt="pdf" class="w-7">
+                                                <img src="{{asset('images/pdf.png')}}" alt="pdf" class="w-5 2xl:w-7">
                                                 <span class="relative
                                                     before:content-['']
                                                     before:absolute
@@ -306,6 +307,7 @@
                                                     before:duration-300
                                                     before:ease-in-out
                                                     hover:before:w-full
+                                                    text-[12px] 2xl:text-[16px]
                                                 ">
                                                     Installation Manual CS901KVT
                                                 </span>
@@ -315,7 +317,7 @@
                                             <a 
                                             class="flex items-center gap-5"
                                             href="" download="">
-                                                <img src="{{asset('images/pdf.png')}}" alt="pdf" class="w-7">
+                                                <img src="{{asset('images/pdf.png')}}" alt="pdf" class="w-5 2xl:w-7">
                                                 <span class="relative
                                                     before:content-['']
                                                     before:absolute
@@ -328,6 +330,7 @@
                                                     before:duration-300
                                                     before:ease-in-out
                                                     hover:before:w-full
+                                                    text-[12px] 2xl:text-[16px]
                                                 ">
                                                     Instruction Manual CS901KVT
                                                 </span>
@@ -337,7 +340,7 @@
                                             <a 
                                             class="flex items-center gap-5"
                                             href="" download="">
-                                                <img src="{{asset('images/pdf.png')}}" alt="pdf" class="w-7">
+                                                <img src="{{asset('images/pdf.png')}}" alt="pdf" class="w-5 2xl:w-7">
                                                 <span class="relative
                                                     before:content-['']
                                                     before:absolute
@@ -350,6 +353,7 @@
                                                     before:duration-300
                                                     before:ease-in-out
                                                     hover:before:w-full
+                                                    text-[12px] 2xl:text-[16px]
                                                 ">
                                                     3D Drawings
                                                 </span>
@@ -360,82 +364,81 @@
                             </div>
 
                             <div>
-                                <h1 class="text-xl font-bold">
+                                <h1 class="font-bold text-[16px] 2xl:text-[20px]">
                                     Technologies
                                 </h1>
                                 <div class="mt-5 w-[500px]">
                                     <div class="flex flex-wrap items-center gap-2">
-                                        <img src="https://placehold.co/100x100" alt="" class="w-12 h-12 rounded-full">
-                                        <img src="https://placehold.co/100x100" alt="" class="w-12 h-12 rounded-full">
-                                        <img src="https://placehold.co/100x100" alt="" class="w-12 h-12 rounded-full">
-                                        <img src="https://placehold.co/100x100" alt="" class="w-12 h-12 rounded-full">
-                                        <img src="https://placehold.co/100x100" alt="" class="w-12 h-12 rounded-full">
-                                        <img src="https://placehold.co/100x100" alt="" class="w-12 h-12 rounded-full">
-                                        <img src="https://placehold.co/100x100" alt="" class="w-12 h-12 rounded-full">
-                                        <img src="https://placehold.co/100x100" alt="" class="w-12 h-12 rounded-full">
-                                        <img src="https://placehold.co/100x100" alt="" class="w-12 h-12 rounded-full">
-                                        <img src="https://placehold.co/100x100" alt="" class="w-12 h-12 rounded-full">
-                                        <img src="https://placehold.co/100x100" alt="" class="w-12 h-12 rounded-full">
-                                        <img src="https://placehold.co/100x100" alt="" class="w-12 h-12 rounded-full">
-                                        <img src="https://placehold.co/100x100" alt="" class="w-12 h-12 rounded-full">
+                                        <img src="https://placehold.co/100x100" alt="" class="w-9 2xl:w-12 h-9 2xl:h-12 rounded-full">
+                                        <img src="https://placehold.co/100x100" alt="" class="w-9 2xl:w-12 h-9 2xl:h-12 rounded-full">
+                                        <img src="https://placehold.co/100x100" alt="" class="w-9 2xl:w-12 h-9 2xl:h-12 rounded-full">
+                                        <img src="https://placehold.co/100x100" alt="" class="w-9 2xl:w-12 h-9 2xl:h-12 rounded-full">
+                                        <img src="https://placehold.co/100x100" alt="" class="w-9 2xl:w-12 h-9 2xl:h-12 rounded-full">
+                                        <img src="https://placehold.co/100x100" alt="" class="w-9 2xl:w-12 h-9 2xl:h-12 rounded-full">
+                                        <img src="https://placehold.co/100x100" alt="" class="w-9 2xl:w-12 h-9 2xl:h-12 rounded-full">
+                                        <img src="https://placehold.co/100x100" alt="" class="w-9 2xl:w-12 h-9 2xl:h-12 rounded-full">
+                                        <img src="https://placehold.co/100x100" alt="" class="w-9 2xl:w-12 h-9 2xl:h-12 rounded-full">
+                                        <img src="https://placehold.co/100x100" alt="" class="w-9 2xl:w-12 h-9 2xl:h-12 rounded-full">
+                                        <img src="https://placehold.co/100x100" alt="" class="w-9 2xl:w-12 h-9 2xl:h-12 rounded-full">
+                                        <img src="https://placehold.co/100x100" alt="" class="w-9 2xl:w-12 h-9 2xl:h-12 rounded-full">
+                                        <img src="https://placehold.co/100x100" alt="" class="w-9 2xl:w-12 h-9 2xl:h-12 rounded-full">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="grid grid-cols-3 gap-5 mt-5">
                                 <div>
-                                    <h1 class="text-xl font-bold">
+                                    <h1 class="text-[14px] 2xl:text-[20px] font-bold">
                                         Care & Maintenance
                                     </h1>
                                     <ul>
                                         <li>
-                                            <a href="" class="text-[16px] text-red-500 font-medium link">
+                                            <a href="" class="text-[12px] 2xltext-[16px] text-red-500 font-medium link">
                                                 Daily Cleaning Video
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="" class="text-[16px] text-red-500 font-medium link">
+                                            <a href="" class="text-[12px] 2xltext-[16px] text-red-500 font-medium link">
                                                 Deep Cleaning Video
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="col-span-2">
-                                    <h1 class="text-xl font-bold">
+                                    <h1 class="text-[14px] 2xl:text-[20px] font-bold">
                                         Awards
                                     </h1>
-                                    <div class="flex flex-wrap w-[440px] gap-1">
-                                        <img src="{{asset('images/gooddesign.svg')}}" alt="" class="w-32 object-cover object-center">
-                                        <img src="{{asset('images/reddot.svg')}}" alt="" class="w-24 object-cover object-center">
-                                        <img src="{{asset('images/design.svg')}}" alt="" class="w-32 object-cover object-center">
+                                    <div class="flex flex-wrap w-full md:w-[440px] gap-1">
+                                        <img src="{{asset('images/gooddesign.svg')}}" alt="" class="w-24 2xl:w-32 object-cover object-center">
+                                        <img src="{{asset('images/reddot.svg')}}" alt="" class="w-20 2xl:w-24 object-cover object-center">
+                                        <img src="{{asset('images/design.svg')}}" alt="" class="w-24 2xl:w-32 object-cover object-center">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="mt-5 font-['Inter'] ">
                                 <div class="flex items-center gap-2">
-                                    <h1 class="text-xl font-bold">
+                                    <h1 class="text-[14px] 2xl:text-[20px] font-bold">
                                     Available in 
                                 </h1>
-                                <a href="" class="text-[16px] text-gray-200 font-medium px-4 py-2 rounded-full bg-gray-900">
+                                <a href="" class="text-[12px] 2xl:text-[16px] text-gray-200 font-medium px-4 py-2 rounded-full bg-gray-900">
                                     Showroom
                                 </a>
                                 </div>
                             </div>
-                            <p class="text-gray-500 text-sm mt-2">
+                            <p class="text-gray-500 text-[12px] 2xl:text-[16px] mt-2">
                                 For the product import regulations and availability information, please contact our distributor(s) / dealer(s) in your country.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <footer class="absolute inset-x-0 bottom-0 bg-black py-1">
+            <footer class="absolute inset-x-0 bottom-0 bg-black py-1 z-[50]">
                 <p class="text-white text-[12px] text-center"> © Copyright 2024 SUNHOUR GROUP, All Rights Reserved</p>
             </footer>
         </div>
     </div>
-@endsection
-<style>
+    <style>
     .tab-content {
         display: none;
     }
@@ -487,3 +490,4 @@
         });
     });
 </script>
+@endsection
