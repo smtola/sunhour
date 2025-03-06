@@ -48,5 +48,10 @@
                 max-width: 156vh;
             }
         }
+        @media only screen and (max-width: 1285px) and (min-width: 1285px) {
+            .mt-15inch {
+                margin-top: 8rem;
+            }
+        }
     </style>
 @endsection
