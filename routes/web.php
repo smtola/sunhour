@@ -27,7 +27,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
-Route::get('/brands', [BrandsController::class, 'index'])->name('brands.all');
+Route::get('/all/brands', [BrandsController::class, 'index'])->name('brands.all');
 Route::get('/{brands}/product', [BrandsController::class, 'show'])->name('brands-client.show');
 Route::get('/{brands}/{products}/models', [BrandsController::class, 'model'])->name('brands-client.model');
 Route::get('/{brands}/{products}/{models}/details', [BrandsController::class, 'model_details'])->name('brands-client.model-details');
