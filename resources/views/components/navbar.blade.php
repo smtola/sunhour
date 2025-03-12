@@ -1,5 +1,5 @@
 <div class="hidden md:block fixed w-full top-[8%] right-0 left-0 xl:top-[10%] xl:left-0 z-[100] xl:w-fit xl:h-full">
-    <div class="bg-black/70 px-[3em] rounded-sm py-4 py-15inch xl:py-[5rem] 2xl:py-[9rem] {{ Route::is('partnerships.index') || Route::is('brands-client.model-details') || Route::is('contact.index') || Route::is('brands-client.model-details') ? 'bg-[#000]' : '' }} overflow-hidden">
+    <div class="bg-black/70 px-[3em] rounded-sm py-4 py-15inch xl:py-[5rem] 2xl:py-[9rem] {{ Route::is('partnerships.index') || Route::is('brands-client.model-details') || Route::is('contact.index') || Route::is('brands-client.model-details') ? 'bg-black/100' : '' }} overflow-hidden">
         <ul class="flex flex-row xl:flex-col justify-center items-start gap-4 space-y-3 2xl:space-y-6 text-nowrap">
             <li>
                 <a href="{{ route('home') }}" class="group">
