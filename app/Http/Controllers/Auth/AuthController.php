@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
-use Tymon\JWTAuth\Facades\JWTAuth;
-use Tymon\JWTAuth\Exceptions\JWTException;
-use App\Models\User;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Tymon\JWTAuth\Exceptions\JWTException;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthController extends Controller
 {
@@ -60,7 +60,7 @@ class AuthController extends Controller
 
         $request->session()->regenerate();
         session(['jwt' => $token]);
-        
+
         return redirect()->route('dashboard.index')->with('success', 'Login successful');
 
     } catch (JWTException $e) {
@@ -98,7 +98,7 @@ class AuthController extends Controller
             ]);
 
             $token = JWTAuth::fromUser($user);
-            
+
             if (!$token) {
                 throw new JWTException('Could not generate token.');
             }

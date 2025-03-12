@@ -1,26 +1,27 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FunctionController;
 use App\Http\Controllers\BrandController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ModelsController;
-use App\Http\Controllers\DetailController;
-use App\Http\Controllers\FeatureController;
-use App\Http\Controllers\SpaceController;
-use App\Http\Controllers\MediaController;
-use App\Http\Controllers\FileDownloadController;
 use App\Http\Controllers\DailyCleanController;
 use App\Http\Controllers\DeepCleanController;
-use App\Http\Controllers\ShowRoomController;
-use App\Http\Controllers\TecnologyController;
-use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\DetailController;
+use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\FileDownloadController;
 use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\BrandsController;
-use App\Http\Controllers\Frontend\PartnershipController;
 use App\Http\Controllers\Frontend\CareerController;
 use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\PartnershipController;
+use App\Http\Controllers\MediaController;
+use App\Http\Controllers\ModelsController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShowRoomController;
+use App\Http\Controllers\SpaceController;
+use App\Http\Controllers\TecnologyController;
+use Illuminate\Support\Facades\Route;
+
 // Public routes with guest middleware
 Route::get('/', function () {
     return view('frontends.home');
