@@ -109,33 +109,32 @@
         </div>
     </div>
     <div class="grid grid-cols-12 space-x-5 mt-5">
-        <div class=" bg-white rounded-lg col-span-9 h-[80vh] overflow-x-auto">
+        <div class=" bg-white rounded-lg col-span-9 h-fit overflow-x-auto">
             <table class="table ">
                 <thead>
                     <tr class="text-gray-500 border-gray-200">
-                        <th>Model</th>
                         <th>Daily Clean</th>
                         <th class="text-end">Action</th>
                     </tr>
                 </thead>
                 @if ($loading)
-                    <div class="inline-flex items-end gap-2">
-                        <p>Loading</p>
-                        <span class="loading loading-dots loading-xs text-gray-500"></span>
-                    </div>
+                    <tr>
+                        <td>
+                            <div class="inline-flex items-end gap-2">
+                                <p>Data don't exist in storage.</p>
+                                <span class="loading loading-dots loading-xs text-gray-500"></span>
+                            </div>
+                        </td>
+                    </tr>
                 @else
                     <tbody>
-                        <tr class="hover:bg-gray-100 border-gray-200 border-b">
-                            <td >
-                                <div class="flex items-center gap-2">
-                                    <img src="https://placehold.co/100x100" alt="" class="w-10 h-10 rounded-full">
-                                    <p>DKHDKDK</p>
-                                </div>
-                            </td>
+                    @foreach($dc as $item)
+                        @if($item->model_id == $models->uuid)
+                            <tr class="hover:bg-gray-100 border-gray-200 border-b">
                             <td>
                                 <div class="flex items-center gap-2">
-                                    <img src="https://placehold.co/100x100" alt="" class="w-10 h-10 rounded-full">
-                                    <p>Name</p>
+                                    <iframe width="200" height="100" src="{{$item->video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    <p>{{$item->name}}</p>
                                 </div>
                             </td>
                             <td class="inline-flex items-center gap-2 float-end">
@@ -164,14 +163,14 @@
                                 </button>
                             </td>
                         </tr>
+                        @endif
+                    @endforeach
                     </tbody>
                 @endif
             </table>
             {{-- Pagination Of laravel --}}
-            <div class="my-16">
-                <div class="flex items-center justify-end">
-                    {{-- {{ $model->links() }} --}}
-                </div>
+            <div class="m-3">
+                {{ $dc->links() }}
             </div>
         </div>
 
@@ -181,12 +180,15 @@
                 @csrf
                 <div x-data="{
                     name: '',
-                    link: '',
+                    video: '',
                     isFormValid() {
-                        return this.name.trim() !== '' && this.link.trim() !== '';
+                        return this.name.trim() !== '' && this.video.trim() !== '';
                     }
-                }" 
+                }"
                 class="space-y-4">
+                    <input type="hidden" name="model_id" id="model_id" x-text="{{$models->uuid}}" value="{{$models->uuid}}"
+                           class="form-control w-full bg-gray-100 rounded-sm py-1 px-2 text-[12px] font-light outline-none focus:bg-gray-200 transition-all duration-300"
+                           placeholder="Enter Daily Clean">
                     <!-- Daily Clean Input -->
                     <div class="form-group w-full space-y-2">
                         <label for="name" class="text-gray-500 text-[12px]">Daily Clean</label>
@@ -203,14 +205,14 @@
                                 <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
                                 <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
                             </svg>
-                            <input type="url" name="link" id="link" x-model="link"
+                            <input type="url" name="video" id="video" x-model="video"
                                 class="w-full outline-none bg-transparent"
                                 placeholder="https://placehold.co/100x100">
                         </label>
                     </div>
 
                     <!-- Submit Button -->
-                    <button type="submit" 
+                    <button type="submit"
                         x-bind:disabled="!isFormValid()"
                         class="text-[14px] bg-blue-500 text-white px-4 py-1 rounded-sm mt-2 hover:bg-blue-600 disabled:bg-gray-400 disabled:cursor-not-allowed">
                         Submit

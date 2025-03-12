@@ -1,9 +1,9 @@
 <div class="hidden md:block fixed w-full top-[8%] right-0 left-0 xl:top-[10%] xl:left-0 z-[100] xl:w-fit xl:h-full">
-    <div class="bg-black/70 px-[3em] rounded-sm py-4 py-15inch xl:py-[5rem] 2xl:py-[9rem] {{ Route::is('partnerships.index') || Route::is('brands-client.model-details') || Route::is('contact.index') ? 'bg-black/100' : '' }} overflow-hidden">
+    <div class="bg-black/70 px-[3em] rounded-sm py-4 py-15inch xl:py-[5rem] 2xl:py-[9rem] {{ Route::is('partnerships.index') || Route::is('brands-client.model-details') || Route::is('contact.index') || Route::is('brands-client.model-details') ? 'bg-[#000]' : '' }} overflow-hidden">
         <ul class="flex flex-row xl:flex-col justify-center items-start gap-4 space-y-3 2xl:space-y-6 text-nowrap">
             <li>
                 <a href="{{ route('home') }}" class="group">
-                    <span 
+                    <span
                     class="relative
                     text-white text-[18px] before:content-[''] before:absolute before:bottom-0 xl:before:left-[100%] xl:before:bottom-1 before:w-0 before:h-[2px] before:bg-white before:transition-all before:duration-300 before:ease-in-out
                     group-hover:w-full xl:group-hover:before:w-[200%] hover:before:opacity-100
@@ -13,7 +13,7 @@
             </li>
             <li>
                 <a href="{{ route('about-us') }}" class="flex flex-col items-center group {{ Route::is('about-us') ? 'font-bold' : '' }} ">
-                    <span 
+                    <span
                     class="relative
                     text-white text-[18px] before:content-[''] before:absolute before:bottom-0 xl:before:left-[100%] xl:before:bottom-2 before:w-0 before:h-[2px] before:bg-white before:transition-all before:duration-300 before:ease-in-out
                     group-hover:w-full xl:group-hover:before:w-[200%] hover:before:opacity-100
@@ -22,18 +22,18 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('brands.all') }}" class="flex flex-col items-center group {{ Route::is('brands.all') || Route::is('brands-client.show') || Route::is('brands-client.model') ? 'font-bold' : '' }}">
-                    <span 
+                <a href="{{ route('brands.all') }}" class="flex flex-col items-center group {{ Route::is('brands.all') || Route::is('brands-client.show') || Route::is('brands-client.model') || Route::is('brands-client.model-details' ? 'font-bold' : '') }}">
+                    <span
                     class="relative
                     text-white text-[18px] before:content-[''] before:absolute before:bottom-0 xl:before:left-[100%] xl:before:bottom-2 before:w-0 before:h-[2px] before:bg-white before:transition-all before:duration-300 before:ease-in-out
                     group-hover:w-full xl:group-hover:before:w-[200%] hover:before:opacity-100
-                    {{ Route::is('brands.all') || Route::is('brands-client.show') || Route::is('brands-client.model') ? 'before:w-full xl:before:w-[200%] before:opacity-100' : '' }}"
+                    {{ Route::is('brands.all') || Route::is('brands-client.show') || Route::is('brands-client.model') || Route::is('brands-client.model-details') ? 'before:w-full xl:before:w-[200%] before:opacity-100' : '' }}"
                     >Brands</span>
                 </a>
             </li>
             <li>
                <a href="{{ route('partnerships.index') }}" class="flex flex-col items-center group {{ Route::is('partnerships.index') ? 'font-bold' : '' }}">
-                    <span 
+                    <span
                     class="relative
                     text-white text-[18px] before:content-[''] before:absolute before:bottom-0 xl:before:left-[100%] xl:before:bottom-2 before:w-0 before:h-[2px] before:bg-white before:transition-all before:duration-300 before:ease-in-out
                     group-hover:w-full xl:group-hover:before:w-[200%] hover:before:opacity-100
@@ -43,7 +43,7 @@
             </li>
             <li>
                 <a href="{{ route('career.index') }}" class="flex flex-col items-center group {{ Route::is('career.index') ? 'font-bold' : '' }}">
-                    <span 
+                    <span
                     class="relative
                     text-white text-[18px] before:content-[''] before:absolute before:bottom-0 xl:before:left-[100%] xl:before:bottom-2 before:w-0 before:h-[2px] before:bg-white before:transition-all before:duration-300 before:ease-in-out
                     group-hover:w-full xl:group-hover:before:w-[200%] hover:before:opacity-100
@@ -53,7 +53,7 @@
             </li>
             <li>
                 <a href="{{ route('contact.index') }}" class="flex flex-col items-center group {{ Route::is('contact.index') ? 'font-bold' : '' }}">
-                    <span 
+                    <span
                     class="relative
                     text-white text-[18px] before:content-[''] before:absolute before:bottom-0 xl:before:left-[100%] xl:before:bottom-2 before:w-0 before:h-[2px] before:bg-white before:transition-all before:duration-300 before:ease-in-out
                     group-hover:w-full xl:group-hover:before:w-[100%] hover:before:opacity-100
@@ -105,7 +105,7 @@
             <ul class="flex flex-col justify-center items-start space-y-6 text-nowrap">
                 <li>
                     <a href="{{ route('home') }}" class="group">
-                        <span 
+                        <span
                         class="relative
                         text-white text-[18px] before:content-[''] before:absolute before:bottom-0 xl:before:left-[100%] xl:before:bottom-1 before:w-0 before:h-[2px] before:bg-white before:transition-all before:duration-300 before:ease-in-out
                         group-hover:w-full xl:group-hover:before:w-[200%] hover:before:opacity-100
@@ -115,7 +115,7 @@
                 </li>
                 <li>
                     <a href="{{ route('about-us') }}" class="flex flex-col items-center group {{ Route::is('about-us') ? 'font-bold' : '' }} ">
-                        <span 
+                        <span
                         class="relative
                         text-white text-[18px] before:content-[''] before:absolute before:bottom-0 xl:before:left-[100%] xl:before:bottom-2 before:w-0 before:h-[2px] before:bg-white before:transition-all before:duration-300 before:ease-in-out
                         group-hover:w-full xl:group-hover:before:w-[200%] hover:before:opacity-100
@@ -125,7 +125,7 @@
                 </li>
                 <li>
                     <a href="{{ route('brands.all') }}" class="flex flex-col items-center group {{ Route::is('brands.all') || Route::is('brands-client.show') || Route::is('brands-client.model') ? 'font-bold' : '' }}">
-                        <span 
+                        <span
                         class="relative
                         text-white text-[18px] before:content-[''] before:absolute before:bottom-0 xl:before:left-[100%] xl:before:bottom-2 before:w-0 before:h-[2px] before:bg-white before:transition-all before:duration-300 before:ease-in-out
                         group-hover:w-full xl:group-hover:before:w-[200%] hover:before:opacity-100
@@ -135,7 +135,7 @@
                 </li>
                 <li>
                 <a href="{{ route('partnerships.index') }}" class="flex flex-col items-center group {{ Route::is('partnerships.index') ? 'font-bold' : '' }}">
-                        <span 
+                        <span
                         class="relative
                         text-white text-[18px] before:content-[''] before:absolute before:bottom-0 xl:before:left-[100%] xl:before:bottom-2 before:w-0 before:h-[2px] before:bg-white before:transition-all before:duration-300 before:ease-in-out
                         group-hover:w-full xl:group-hover:before:w-[200%] hover:before:opacity-100
@@ -145,7 +145,7 @@
                 </li>
                 <li>
                     <a href="{{ route('career.index') }}" class="flex flex-col items-center group {{ Route::is('career.index') ? 'font-bold' : '' }}">
-                        <span 
+                        <span
                         class="relative
                         text-white text-[18px] before:content-[''] before:absolute before:bottom-0 xl:before:left-[100%] xl:before:bottom-2 before:w-0 before:h-[2px] before:bg-white before:transition-all before:duration-300 before:ease-in-out
                         group-hover:w-full xl:group-hover:before:w-[200%] hover:before:opacity-100
@@ -155,7 +155,7 @@
                 </li>
                 <li>
                     <a href="{{ route('contact.index') }}" class="flex flex-col items-center group {{ Route::is('contact.index') ? 'font-bold' : '' }}">
-                        <span 
+                        <span
                         class="relative
                         text-white text-[18px] before:content-[''] before:absolute before:bottom-0 xl:before:left-[100%] xl:before:bottom-2 before:w-0 before:h-[2px] before:bg-white before:transition-all before:duration-300 before:ease-in-out
                         group-hover:w-full xl:group-hover:before:w-[100%] hover:before:opacity-100

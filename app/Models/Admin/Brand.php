@@ -7,5 +7,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Brand extends Model
 {
     use HasFactory;
-    protected $fillable = ['name'];
+    protected $primaryKey = 'uuid';
+    protected $casts = [
+        'uuid' => 'string',  // Ensure uuid is cast to a string
+    ];
+    protected $fillable = ['uuid','name','logoSvg'];
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

@@ -96,7 +96,7 @@
                 </div>
         </div>
         <div class="grid grid-cols-12 space-x-5 mt-5">
-            <div class=" bg-white rounded-lg col-span-9 h-[80vh]">
+            <div class=" bg-white rounded-lg col-span-9 h-fit">
                 <table class="table ">
                         <thead>
                             <tr class="text-gray-500 border-gray-200">
@@ -105,23 +105,28 @@
                                 <th class="text-end">Action</th>
                             </tr>
                         </thead>
-                        @if($loading)
-                                <div class="inline-flex items-end gap-2">
-                                    <p>Loading</p>
-                                    <span class="loading loading-dots loading-xs text-gray-500"></span>
-                                </div>
+                            @if($loading)
+                                <tr>
+                                    <td>
+                                        <div class="inline-flex items-end gap-2">
+                                            <p>Data don't exist in storage.</p>
+                                            <span class="loading loading-dots loading-xs text-gray-500"></span>
+                                        </div>
+                                    </td>
+                                </tr>
                             @else
                             <tbody>
                                 @foreach ($data as $item)
-                                <tr class="hover:bg-gray-100 border-gray-200 border-b">
+                                <tr class="hover:bg-gray-800 bg-gray-600 border-gray-200 border-b">
                                     <td class="flex items-center gap-2">
-                                        <img src="https://placehold.co/100x100" alt="" class="w-10 h-10 rounded-full">
-                                        <p>{{ $item->name }}</p>
+                                         <span class="text-white group-hover:text-black transition-all duration-300 ">
+                                            {!! $item->logoSvg !!}
+                                         </span>
                                     </td>
                                     <td></td>
                                     <td class="inline-flex items-center gap-2 float-end">
-                                        <a data-tip="Go to Products" 
-                                        href="{{ route('products.index',  $item->name) }}" class="bg-info/10 px-2 py-1 rounded-md tooltip tooltip-top tooltip-info link link-info">
+                                        <a data-tip="Go to Products"
+                                        href="{{ route('products.index', $item->uuid) }}" class="bg-info/10 px-2 py-1 rounded-md tooltip tooltip-top tooltip-info link link-info">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="1.25">
                                             <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"></path>
                                             <path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"></path>
@@ -154,46 +159,73 @@
                         @endif
                     </table>
                 {{-- Pagination Of laravel --}}
-                <div class="my-16">
-                    <div class="flex items-center justify-end">
-                        {{-- {{ $data->links() }} --}}
-                    </div>
+                <div class="m-3">
+                    {{ $data->links() }}
                 </div>
             </div>
 
-            {{-- form to add new brand --}}
             <div class="col-span-3 w-full pr-5">
                 <form action="{{ route('brands.store') }}" method="POST" class="w-full bg-white rounded-lg p-5">
-                @csrf
-                <div x-data="{
-                    name: '',
-                    isFormValid() {
-                        return this.name.trim() !== '';
-                    }
-                }" class="space-y-4">
-                    <!-- Brand Input -->
-                    <div class="form-group w-full space-y-2">
-                        <label for="name" class="text-gray-500 text-[12px]">Brand</label>
-                        <input 
-                            type="text" 
-                            name="name" 
-                            id="name" 
-                            x-model="name"
-                            class="form-control w-full bg-gray-100 rounded-sm py-1 px-2 text-[12px] font-light outline-none focus:bg-gray-200 transition-all duration-300"
-                            placeholder="Enter Brand"
-                        >
-                    </div>
+                    @csrf
+                    <div x-data="{
+                        name: '',
+                        description: '',
+                        website: '',
+                        logoSvg: '',
+                        isFormValid() {
+                            return this.name.trim() !== '' &&
+                                this.logoSvg.trim() !== '';
+                        }
+                    }" class="space-y-4">
+                        <!-- Brand Input -->
+                        <div class="form-group w-full space-y-2">
+                            <label for="name" class="text-gray-500 text-[12px]">Brand Name</label>
+                            <input
+                                type="text"
+                                name="name"
+                                id="name"
+                                x-model="name"
+                                class="form-control w-full bg-gray-100 rounded-sm py-1 px-2 text-[12px] font-light outline-none focus:bg-gray-200 transition-all duration-300"
+                                placeholder="Enter Brand Name"
+                            >
+                        </div>
 
-                    <!-- Submit Button -->
-                    <button 
-                        type="submit" 
-                        :disabled="!isFormValid()"
-                        class="text-[14px] bg-blue-500 text-white px-4 py-1 rounded-sm mt-2 hover:bg-blue-600 disabled:bg-gray-400 disabled:cursor-not-allowed"
-                    >
-                        Submit
-                    </button>
-                </div>
-            </form>
+                        <!-- Logo SVG Path Input -->
+                        <div class="form-group w-full space-y-2">
+                            <label for="logoSvg" class="text-gray-500 text-[12px]">Logo SVG Path</label>
+                            <textarea
+                                name="logoSvg"
+                                id="logoSvg"
+                                x-model="logoSvg"
+                                class="form-control w-full bg-gray-100 rounded-sm py-1 px-2 text-[12px] font-light outline-none focus:bg-gray-200 transition-all duration-300"
+                                placeholder="Enter SVG path (e.g., <path d='M10 20...'>)"
+                                rows="4"
+                            ></textarea>
+                            <p class="text-gray-400 text-[10px]">Enter valid SVG path data</p>
+                        </div>
+
+                        <!-- Preview Area (Optional) -->
+                        <div class="form-group w-full space-y-2">
+                            <label class="text-gray-500 text-[12px]">Logo Preview</label>
+                            <div class="w-full h-fit bg-gray-800 rounded-sm flex items-center justify-center">
+                                <span class="mx-auto text-white group-hover:text-black transition-all duration-300 p-4">
+                                    <svg width="156" height="25" viewBox="0 0 156 25" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                     x-html="logoSvg ? '<svg>' + logoSvg + '</svg>' : 'No preview'"
+                                    > </svg>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button
+                            type="submit"
+                            :disabled="!isFormValid()"
+                            class="text-[14px] bg-blue-500 text-white px-4 py-1 rounded-sm mt-2 hover:bg-blue-600 disabled:bg-gray-400 disabled:cursor-not-allowed"
+                        >
+                            Submit
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

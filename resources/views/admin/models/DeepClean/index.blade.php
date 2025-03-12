@@ -109,90 +109,92 @@
         </div>
     </div>
     <div class="grid grid-cols-12 space-x-5 mt-5">
-        <div class=" bg-white rounded-lg col-span-9 h-[80vh] overflow-x-auto">
+        <div class=" bg-white rounded-lg col-span-9 h-fit overflow-x-auto">
             <table class="table ">
                 <thead>
-                    <tr class="text-gray-500 border-gray-200">
-                        <th>Model</th>
-                        <th>Deep Clean</th>
-                        <th class="text-end">Action</th>
-                    </tr>
+                <tr class="text-gray-500 border-gray-200">
+                    <th>Daily Clean</th>
+                    <th class="text-end">Action</th>
+                </tr>
                 </thead>
                 @if ($loading)
-                    <div class="inline-flex items-end gap-2">
-                        <p>Loading</p>
-                        <span class="loading loading-dots loading-xs text-gray-500"></span>
-                    </div>
+                    <tr>
+                        <td>
+                            <div class="inline-flex items-end gap-2">
+                                <p>Data don't exist in storage.</p>
+                                <span class="loading loading-dots loading-xs text-gray-500"></span>
+                            </div>
+                        </td>
+                    </tr>
                 @else
                     <tbody>
-                        <tr class="hover:bg-gray-100 border-gray-200 border-b">
-                            <td >
-                                <div class="flex items-center gap-2">
-                                    <img src="https://placehold.co/100x100" alt="" class="w-10 h-10 rounded-full">
-                                    <p>DKHDKDK</p>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="flex items-center gap-2">
-                                    <img src="https://placehold.co/100x100" alt="" class="w-10 h-10 rounded-full">
-                                    <p>Name</p>
-                                </div>
-                            </td>
-                            <td class="inline-flex items-center gap-2 float-end">
-                                <button
-                                    class="tooltip tooltip-top bg-green-50 text-green-500 px-2 py-1 rounded-md hover:bg-green-500 hover:text-white transition-all duration-300">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        width="24" height="24" stroke-width="1.25">
-                                        <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
-                                        <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z">
-                                        </path>
-                                        <path d="M16 5l3 3"></path>
-                                    </svg>
-                                </button>
-                                <button
-                                    class="tooltip tooltip-top bg-red-50 text-red-500 px-2 py-1 rounded-md hover:bg-red-500 hover:text-white transition-all duration-300">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        width="24" height="24" stroke-width="1.25">
-                                        <path d="M4 7l16 0"></path>
-                                        <path d="M10 11l0 6"></path>
-                                        <path d="M14 11l0 6"></path>
-                                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
-                                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
-                                    </svg>
-                                </button>
-                            </td>
-                        </tr>
+                    @foreach($dc as $item)
+                        @if($item->model_id == $models->uuid)
+                            <tr class="hover:bg-gray-100 border-gray-200 border-b">
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <iframe width="200" height="100" src="{{$item->video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                        <p>{{$item->name}}</p>
+                                    </div>
+                                </td>
+                                <td class="inline-flex items-center gap-2 float-end">
+                                    <button
+                                        class="tooltip tooltip-top bg-green-50 text-green-500 px-2 py-1 rounded-md hover:bg-green-500 hover:text-white transition-all duration-300">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                             stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                             width="24" height="24" stroke-width="1.25">
+                                            <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                                            <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z">
+                                            </path>
+                                            <path d="M16 5l3 3"></path>
+                                        </svg>
+                                    </button>
+                                    <button
+                                        class="tooltip tooltip-top bg-red-50 text-red-500 px-2 py-1 rounded-md hover:bg-red-500 hover:text-white transition-all duration-300">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                             stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                             width="24" height="24" stroke-width="1.25">
+                                            <path d="M4 7l16 0"></path>
+                                            <path d="M10 11l0 6"></path>
+                                            <path d="M14 11l0 6"></path>
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                        @endif
+                    @endforeach
                     </tbody>
                 @endif
             </table>
             {{-- Pagination Of laravel --}}
-            <div class="my-16">
-                <div class="flex items-center justify-end">
-                    {{-- {{ $model->links() }} --}}
-                </div>
+            <div class="m-3">
+                {{ $dc->links() }}
             </div>
         </div>
 
         {{-- form to add new brand --}}
         <div class="col-span-3 w-full pr-5">
-             <form action="" method="POST" class="w-full bg-white rounded-lg p-5">
+            <form action="" method="POST" class="w-full bg-white rounded-lg p-5">
                 @csrf
                 <div x-data="{
                     name: '',
-                    link: '',
+                    video: '',
                     isFormValid() {
-                        return this.name.trim() !== '' && this.link.trim() !== '';
+                        return this.name.trim() !== '' && this.video.trim() !== '';
                     }
-                }" 
-                class="space-y-4">
-                    <!-- Deep Clean Input -->
+                }"
+                     class="space-y-4">
+                    <input type="hidden" name="model_id" id="model_id" x-text="{{$models->uuid}}" value="{{$models->uuid}}"
+                           class="form-control w-full bg-gray-100 rounded-sm py-1 px-2 text-[12px] font-light outline-none focus:bg-gray-200 transition-all duration-300"
+                           placeholder="Enter Daily Clean">
+                    <!-- Daily Clean Input -->
                     <div class="form-group w-full space-y-2">
                         <label for="name" class="text-gray-500 text-[12px]">Deep Clean</label>
                         <input type="text" name="name" id="name" x-model="name"
-                            class="form-control w-full bg-gray-100 rounded-sm py-1 px-2 text-[12px] font-light outline-none focus:bg-gray-200 transition-all duration-300"
-                            placeholder="Enter Deep Clean">
+                               class="form-control w-full bg-gray-100 rounded-sm py-1 px-2 text-[12px] font-light outline-none focus:bg-gray-200 transition-all duration-300"
+                               placeholder="Enter Daily Clean">
                     </div>
                     <!-- Link Input -->
                     <div class="form-group w-full space-y-2">
@@ -203,16 +205,16 @@
                                 <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
                                 <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
                             </svg>
-                            <input type="url" name="link" id="link" x-model="link"
-                                class="w-full outline-none bg-transparent"
-                                placeholder="https://placehold.co/100x100">
+                            <input type="url" name="video" id="video" x-model="video"
+                                   class="w-full outline-none bg-transparent"
+                                   placeholder="https://placehold.co/100x100">
                         </label>
                     </div>
 
                     <!-- Submit Button -->
-                    <button type="submit" 
-                        x-bind:disabled="!isFormValid()"
-                        class="text-[14px] bg-blue-500 text-white px-4 py-1 rounded-sm mt-2 hover:bg-blue-600 disabled:bg-gray-400 disabled:cursor-not-allowed">
+                    <button type="submit"
+                            x-bind:disabled="!isFormValid()"
+                            class="text-[14px] bg-blue-500 text-white px-4 py-1 rounded-sm mt-2 hover:bg-blue-600 disabled:bg-gray-400 disabled:cursor-not-allowed">
                         Submit
                     </button>
                 </div>

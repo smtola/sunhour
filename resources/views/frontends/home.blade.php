@@ -3,12 +3,12 @@
 @section('content')
     <div class="m-0 p-0 overflow-hidden">
         <div class="relative h-screen w-full">
-            <video 
+            {{-- <video 
             autoplay muted loop
             class="absolute top-0 left-0 w-full h-full object-cover"
             >
                 <source src="{{asset('background.mp4')}}" type="video/mp4">
-            </video>
+            </video> --}}
             <div class="absolute inset-0 bg-black opacity-50"></div>
             {{-- Navbar --}}
             @component('components.navbar')

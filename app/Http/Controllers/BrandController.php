@@ -7,20 +7,23 @@ use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-    */
+    private function encodeIdToString($id, $length = 10)
+    {
+        $id = (int)$id;
+        $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        $saltLength = $length - strlen((string)$id) - 2;
+        $salt = '';
+        for ($i = 0; $i < max(4, $saltLength); $i++) {
+            $salt .= $characters[rand(0, strlen($characters) - 1)];
+        }
+        $combined = $salt . '-' . $id;
+        return base64_encode($combined);
+    }
     public function index()
-    {  
-       $data = Brand::paginate(10);
-       $product = 'TOTO';
-       $isloading = false;
-       $loading = false;
-       if($data->count() < 0){
-         $loading = true;
-       }
-
-       return view('admin.brands.index', compact('loading','data','isloading','product'));
+    {
+        $data = Brand::paginate(10);
+        $loading = $data->isEmpty();
+        return view('admin.brands.index',  compact('loading', 'data'));
     }
 
     /**
@@ -30,7 +33,8 @@ class BrandController extends Controller
     {
         $request->validate([
             'name' => 'required',
-        ]); 
+            'logoSvg' => 'required'
+        ]);
 
         $data = $request->except(['_token','_method']);
 

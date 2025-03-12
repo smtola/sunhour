@@ -5,30 +5,23 @@ namespace App\Http\Controllers;
 use App\Models\Admin\Product;
 use App\Models\Admin\Brand;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($brand)
     {
-        $product = Product::paginate(10);
-        $brand = Brand::find(1);
-       $loading = false;
-       if($product->count() < 0){
-         $loading = true;
-       }
-
-       return view('admin.products.index', compact('loading','product','brand'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $loading = true;
+        $product = Product::paginate(8);
+        $singleData = Brand::query()->where('uuid', $brand)->first();
+        if ($product->count() > 0) {
+            $loading = false;
+            return view('admin.products.index', compact('loading', 'product','singleData'));
+        }
+        return view('admin.products.index',  compact('loading', 'product','singleData'));
     }
 
     /**
@@ -36,25 +29,17 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $brand = Brand::find(1);
         $request->validate([
             'name' => 'required',
-        ]); 
+        ]);
 
         $data = $request->except(['_token','_method']);
 
         Product::create($data);
 
-        return redirect()->route('products.index',$brand)->with('success', 'Product created successfully');
+        return redirect()->back()->with('success', 'Product created successfully');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Product $product)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -75,8 +60,15 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+
+        if ($product) {
+            $product->delete();
+            return redirect()->back()->with('success', 'Product deleted successfully');
+        }
+
+        return redirect()->back()->with('error', 'Product not found');
     }
 }

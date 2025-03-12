@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tecnologies', function (Blueprint $table) {
-            $table->id();
+        Schema::create('technologies', function (Blueprint $table) {
+            $table->text('uuid')->primary();
+            $table->string('name');
+            $table->text('link');
+            $table->text('description');
+            $table->foreignId('functions_id')->constrained('model_functions','uuid')->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tecnologies');
+        Schema::dropIfExists('technologies');
     }
 };

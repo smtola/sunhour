@@ -27,10 +27,10 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
-Route::get('/all/brands', [BrandsController::class, 'index'])->name('brands.all');
-Route::get('/brands/{products}', [BrandsController::class, 'show'])->name('brands-client.show');
-Route::get('/brands/{products}/{models}', [BrandsController::class, 'model'])->name('brands-client.model');
-Route::get('/brands/{products}/{models}/{models_details}', [BrandsController::class, 'model_details'])->name('brands-client.model-details');
+Route::get('/brands', [BrandsController::class, 'index'])->name('brands.all');
+Route::get('/{brands}/product', [BrandsController::class, 'show'])->name('brands-client.show');
+Route::get('/{brands}/{products}/models', [BrandsController::class, 'model'])->name('brands-client.model');
+Route::get('/{brands}/{products}/{models}/details', [BrandsController::class, 'model_details'])->name('brands-client.model-details');
 Route::get('/partnerships', [PartnershipController::class, 'index'])->name('partnerships.index');
 Route::get('/career', [CareerController::class, 'index'])->name('career.index');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
@@ -50,15 +50,14 @@ Route::group(['middleware' => 'auth.jwt', 'prefix' => 'admin'], function () {
     Route::resource('brands', BrandController::class);
     Route::resource('{brands}/products', ProductController::class);
     Route::resource('{brands}/{products}/models', ModelsController::class);
-    Route::resource('{brands}/{products}/{models}/details', DetailController::class);
     Route::resource('{brands}/{products}/{models}/functions', FunctionController::class);
     Route::resource('{brands}/{products}/{models}/{functions}/tech-details', TecnologyController::class);
     Route::resource('{brands}/{products}/{models}/daily-cleans', DailyCleanController::class);
     Route::resource('{brands}/{products}/{models}/deep-cleans', DeepCleanController::class);
     Route::resource('{brands}/{products}/{models}/show-rooms', ShowRoomController::class);
-    Route::resource('{brands}/{products}/{models}/{details}/features', FeatureController::class);
-    Route::resource('{brands}/{products}/{models}/{details}/spaces', SpaceController::class);
-    Route::resource('{brands}/{products}/{models}/{details}/medias', MediaController::class);
-    Route::resource('{brands}/{products}/{models}/{details}/downloads', FileDownloadController::class);
+    Route::resource('{brands}/{products}/{models}/features', FeatureController::class);
+    Route::resource('{brands}/{products}/{models}/spaces', SpaceController::class);
+    Route::resource('{brands}/{products}/{models}/medias', MediaController::class);
+    Route::resource('{brands}/{products}/{models}/downloads', FileDownloadController::class);
 });
 

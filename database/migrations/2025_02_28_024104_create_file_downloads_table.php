@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('file_downloads', function (Blueprint $table) {
-            $table->id();
+            $table->text('uuid')->primary();
+            $table->string('name');
+            $table->string('path');
+            $table->foreignId('model_id')->constrained('models','uuid')->cascadeOnDelete();
             $table->timestamps();
         });
     }

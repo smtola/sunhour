@@ -26,9 +26,6 @@
                         <li>
                             <a href="{{ route('models.index', [$brand, $product]) }}">Models</a>
                         </li>
-                        <li>
-                            <a href="{{ route('details.index', [$brand, $product, $model]) }}">Add Describe Concepts</a>
-                        </li>
                         <li>Add Features</li>
                     </ul>
                 </div>

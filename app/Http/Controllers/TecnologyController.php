@@ -2,27 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin\ModelFunction;
 use App\Models\Admin\Tecnology;
 use Illuminate\Http\Request;
 
 class TecnologyController extends Controller
 {
+    private function encodeIdToString($id, $length = 10)
+    {
+        $id = (int)$id;
+        $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        $saltLength = $length - strlen((string)$id) - 2;
+        $salt = '';
+        for ($i = 0; $i < max(4, $saltLength); $i++) {
+            $salt .= $characters[rand(0, strlen($characters) - 1)];
+        }
+        $combined = $salt . '-' . $id;
+        return base64_encode($combined);
+    }
     /**
      * Display a listing of the resource.
      */
-        public function index()
+        public function index($brand,$product,$model,$functions)
         {
-                $model = 'HDJDJLD';
-                $brand = 'TOTO';
-                $product = 'Tolet';
-                $detail = '1';
-                
-                $loading = false;
-                if($model === ''){
-                    $loading = true;
-                }
-
-                return view('admin.models.functions.details.index', compact('loading','model','brand','product','detail'));
+            $tech = Tecnology::paginate(8);
+            $functions = ModelFunction::query()->where('uuid', $functions)->first();
+            $loading = $tech->isEmpty();
+            return view('admin.models.functions.details.index', compact('brand','product','model','loading','functions','tech'));
         }
 
     /**
@@ -38,7 +44,23 @@ class TecnologyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'functions_id' => 'required',
+            'description' => 'required',
+            'link' => 'required',
+        ]);
+        $data = $request->except(['_token','_method']);
+
+        Tecnology::create([
+            'uuid' => $this->encodeIdToString(1),
+            'name' => $data['name'],
+            'description' => $data['description'],
+            'functions_id' => $data['functions_id'],
+            'link' => $data['link'],
+        ]);
+
+        return redirect()->back()->with('success', 'Function created successfully');
     }
 
     /**

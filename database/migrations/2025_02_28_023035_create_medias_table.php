@@ -12,9 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('medias', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 50);
-            $table->string('link', 255);
+            $table->text('uuid')->primary();
+            $table->string('name', 50)->unique();
+            $table->string('link', 255)->unique();
+            $table->foreignId('model_id')->constrained('models','uuid')->cascadeOnDelete();
             $table->timestamps();
         });
     }

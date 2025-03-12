@@ -54,7 +54,7 @@
                             </li>
 
                             <li>
-                                <a href="{{ route('brands.all')}}" class="block transition hover:text-white text-white/50 {{ Route::is('brands.all') ? 'text-white/100' : '' }}"> {{$brand}} </a>
+                                <a href="{{ route('brands.all')}}" class="block transition hover:text-white text-white/50 {{ Route::is('brands.all') ? 'text-white/100' : '' }}"> {{$brands->name}} </a>
                             </li>
                             <li class="rtl:rotate-180 text-white/50">
                                 <svg
@@ -72,124 +72,24 @@
                             </li>
 
                             <li>
-                                <a href="{{ route('brands-client.show', $brand)}}" class="block transition hover:text-white text-white"> Products </a>
+                                <a href="{{ route('brands-client.show', $brands->uuid)}}" class="block transition hover:text-white text-white"> Products </a>
                             </li>
                         </ol>
                         </nav>
                     </div>
-                    <h1 class="text-center md:text-start text-[64px] font-bold text-white font-[Ponomar] mb-[10px] 2xl:mb-[1em]">
-                        {{$brand}}
+                    <h1 class="text-center md:text-start text-[64px] font-bold text-white font-[Ponomar] mb-[10px] 2xl:mb-[1em] uppercase">
+                        {{$brands->name}}
                     </h1>
                     <div class="h-[50vh] md:h-[38vh] 2xl:h-[31vh] bg-black/70 overflow-y-scroll scroll-smooth rounded-sm">
                         <ul class="p-10 space-y-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center">
-                            <li>
-                                <a href="{{ route('brands-client.model', [$brand, 'Toilet']) }}" class="flex items-center w-full group">
-                                    <span class="h-[2px] w-0 bg-white mt-[10px] group-hover:w-[10%] transition-all duration-300"></span>
-                                    <span class="text-white">Toilet</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="flex items-center w-full group">
-                                    <span class="h-[2px] w-0 bg-white mt-[10px] group-hover:w-[10%] transition-all duration-300"></span>
-                                    <span class="text-white">Wall Hung Toilet</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="flex items-center w-full group">
-                                    <span class="h-[2px] w-0 bg-white mt-[10px] group-hover:w-[10%] transition-all duration-300"></span>
-                                    <span class="text-white">Under Counter Lavatories</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="flex items-center w-full group">
-                                    <span class="h-[2px] w-0 bg-white mt-[10px] group-hover:w-[10%] transition-all duration-300"></span>
-                                    <span class="text-white">Neorest</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="flex items-center w-full group">
-                                    <span class="h-[2px] w-0 bg-white mt-[10px] group-hover:w-[10%] transition-all duration-300"></span>
-                                    <span class="text-white">Concealed Tank</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="flex items-center w-full group">
-                                    <span class="h-[2px] w-0 bg-white mt-[10px] group-hover:w-[10%] transition-all duration-300"></span>
-                                    <span class="text-white">Wall Hung Lavatories</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="flex items-center w-full group">
-                                    <span class="h-[2px] w-0 bg-white mt-[10px] group-hover:w-[10%] transition-all duration-300"></span>
-                                    <span class="text-white">Washlet/Washlet+</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="flex items-center w-full group">
-                                    <span class="h-[2px] w-0 bg-white mt-[10px] group-hover:w-[10%] transition-all duration-300"></span>
-                                    <span class="text-white">Bidet</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="flex items-center w-full group">
-                                    <span class="h-[2px] w-0 bg-white mt-[10px] group-hover:w-[10%] transition-all duration-300"></span>
-                                    <span class="text-white">Flotation Hub</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="flex items-center w-full group">
-                                    <span class="h-[2px] w-0 bg-white mt-[10px] group-hover:w-[10%] transition-all duration-300"></span>
-                                    <span class="text-white">Ecowasher</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="flex items-center w-full group">
-                                    <span class="h-[2px] w-0 bg-white mt-[10px] group-hover:w-[10%] transition-all duration-300"></span>
-                                    <span class="text-white">Console Lavatories</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="flex items-center w-full group">
-                                    <span class="h-[2px] w-0 bg-white mt-[10px] group-hover:w-[10%] transition-all duration-300"></span>
-                                    <span class="text-white">Pearl Acr ylic Bat htub</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="flex items-center w-full group">
-                                    <span class="h-[2px] w-0 bg-white mt-[10px] group-hover:w-[10%] transition-all duration-300"></span>
-                                    <span class="text-white">One Piece Toilet</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="flex items-center w-full group">
-                                    <span class="h-[2px] w-0 bg-white mt-[10px] group-hover:w-[10%] transition-all duration-300"></span>
-                                    <span class="text-white">Self Rimming Lavatories</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="flex items-center w-full group">
-                                    <span class="h-[2px] w-0 bg-white mt-[10px] group-hover:w-[10%] transition-all duration-300"></span>
-                                    <span class="text-white">Acr ylic Bat htub</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="flex items-center w-full group">
-                                    <span class="h-[2px] w-0 bg-white mt-[10px] group-hover:w-[10%] transition-all duration-300"></span>
-                                    <span class="text-white">Close-Coupled Toilet</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="flex items-center w-full group">
-                                    <span class="h-[2px] w-0 bg-white mt-[10px] group-hover:w-[10%] transition-all duration-300"></span>
-                                    <span class="text-white">Semi Recessed Lavatories</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="flex items-center w-full group">
-                                    <span class="h-[2px] w-0 bg-white mt-[10px] group-hover:w-[10%] transition-all duration-300"></span>
-                                    <span class="text-white">Faucet</span>
-                                </a>
-                            </li>
+                            @foreach ($product as $products)
+                                <li>
+                                    <a href="{{ route('brands-client.model', [$brands->uuid, $products->uuid]) }}" class="flex items-center w-full group">
+                                        <span class="h-[2px] w-0 bg-white mt-[10px] group-hover:w-[10%] transition-all duration-300"></span>
+                                        <span class="text-white">{{ $products->name }}</span>
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
