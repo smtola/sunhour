@@ -50,7 +50,7 @@
         }
         @media only screen and (max-width: 1285px) and (min-width: 1285px) {
             .mt-15inch {
-                margin-top: 8rem;
+                margin-top: 7rem;
             }
         }
     </style>
