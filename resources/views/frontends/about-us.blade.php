@@ -3,12 +3,12 @@
 @section('content')
     <div class="m-0 p-0 overflow-hidden">
         <div class="relative h-screen w-full">
-            {{-- <video 
+             <video
             autoplay muted loop
             class="absolute top-0 left-0 w-full h-full object-cover"
             >
                 <source src="{{asset('background.mp4')}}" type="video/mp4">
-            </video> --}}
+            </video>
             <div class="absolute inset-0 bg-black/40"></div>
                 {{-- Navbar --}}
                 @component('components.navbar')
@@ -25,7 +25,7 @@
                     </h1>
                     <div class="bg-black/50 p-3 md:p-[2em] rounded-sm w-full">
                         <p class="text-white text-[16px] md:text-[24px] font-light">Our Story</p>
-                        
+
                         <p class="text-white text-[11px] md:text-[14px] 2xl:text-[16px] font-light text-pretty whitespace-pre-line">
                             In Cambodia, SUN HOUR GROUP impor ts and distributes ranges of trusted and well known brands which have been tested and recommended for its qualityin enlightening your homes.
 
