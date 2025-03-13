@@ -65,11 +65,11 @@
                     <div class="overflow-hidden h-[49vh]">
                         <div class="overflow-y-auto scroll-smooth grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 justify-center items-center gap-6 rounded-sm">
                            @foreach ($brand as $brands)
-                               <a href="{{ route('brands-client.show',$brands->uuid) }}" class="inline-flex justify-center  bg-transparent px-[5em] py-[16px] w-full h-fit border-b-2 border-white group hover:bg-gray-200 hover:border-black transition-all duration-300">
+                               <a href="{{ route('brands-client.show',$brands->uuid) }}" class="{{ $brands->name === 'Toto' ? 'order-first' : '' }} inline-flex justify-center  bg-transparent px-[5em] py-[16px] w-full h-fit border-b-2 border-white group hover:bg-gray-200 hover:border-black transition-all duration-300">
                                     <span class="mx-auto !text-white group-hover:!text-black transition-all duration-300 ">
                                         {!! $brands->logoSvg !!}
                                     </span>
-                                </a>
+                               </a>
                            @endforeach
                         </div>
                     </div>
